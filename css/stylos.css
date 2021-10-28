@@ -60,13 +60,13 @@
     height: 390px;
 }
 
-/* -[home]- */
-.home .row .slider{
+/* -[home items]- */
+.slider{
     width: 100%;
     position: relative;
     background-color: var(--color-primary);
 }
-.home .row .slider .lmix-slider{
+.lmix-slider{
     height: 655px;
     display: none;
     overflow: hidden;
@@ -104,6 +104,10 @@
     border-radius: 50%;
     cursor: pointer;
     margin: 0 10px;
+}
+.enable, .dot:hover{
+    color: var(--color-thema);
+    background-color: var(--color-thema);
 }
 .fade{
     -webkit-animation-name: fade;

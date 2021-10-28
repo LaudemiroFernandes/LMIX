@@ -79,17 +79,65 @@
                     <img src="img/assets/slide/slider-4.jpg" alt="Slider-1" style="width: 100%; height: 100%;">
                 </div>
             </div>
-            <a href="" class="prev"><i class="fa fa-caret-left"></i></a>
-            <a href="" class="next"><i class="fa fa-caret-right"></i></a>
+            <a class="prev" onclick="changeSlides(-1)"><i class="fa fa-caret-left"></i></a>
+            <a class="next" onclick="changeSlides(1)"><i class="fa fa-caret-right"></i></a>
 
             <div class="dotsbox" style="text-align: center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <span class="dot" onclick="currentSlider(1)"></span>
+                <span class="dot" onclick="currentSlider(2)"></span>
+                <span class="dot" onclick="currentSlider(3)"></span>
+                <span class="dot" onclick="currentSlider(4)"></span>
             </div>
         </div>
     </section>
+    <!-- code js slider -->
+    <script>
+        const lmixslide = document.querySelectorAll('.lmix-slider');
+        const dot = document.querySelectorAll('.dot');
+
+        let counter = 1;
+        slidefun(counter);
+
+        let timer = setInterval(autoslide, 8000);
+        function autoslide(){
+            counter += 1;
+            slidefun(counter);
+        }
+        function changeSlides(n){
+            counter += n;
+            slidefun(counter);
+            resetTimer();
+        }
+        function currentSlider(n){
+            counter = n;
+            slidefun(counter);
+            resetTimer();
+        }
+        function resetTimer(){
+            clearInterval(timer);
+            timer = setInterval(autoslide, 8000);
+        }
+
+        function slidefun(n){
+            let i;
+            for(i = 0; i < lmixslide.length; i++){
+                lmixslide[i].style.display = "none";
+            }
+            for(i = 0; i < dot.length; i++){
+                dot[i].classList.remove('enable');
+            }
+
+            if(n > lmixslide.length){
+                counter = 1;
+            }
+            if(n < 1){
+                counter = lmixslide.length;
+            }
+            lmixslide[counter - 1].style.display = "block";
+            dot[counter - 1].classList.add('enable');
+        }
+    </script>
+    <!-- js code -->
     <!-- fim home page -->
 
     <!-- inicio home page -->
