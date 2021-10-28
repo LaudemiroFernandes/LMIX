@@ -31,18 +31,27 @@ header{
     width: 100%;
     z-index: 999;
     position: fixed;
-    background-color: var(--color-primary);
+    background-color: #00000090;
 }
 
 .container{
-    width: 90wv;
+    width: 90vw;
     margin: 0 auto;
 }
 
-section.home, section.mixes, section.lives, section.members{
-    width: 100vw;
+section.home{
+    width: 100%;
+    padding: 0 0 2.5rem 0;
+}
+
+ section.mixes, section.lives, section.members{
+    width: 100%;
     height: 100vh;
-    padding: 5rem 0 2.5em 0;
+    padding: 5rem 0 2.5rem 0;
+}
+
+a{
+    color: var(--color-secondary);
 }
 
 
@@ -56,12 +65,20 @@ section.home, section.mixes, section.lives, section.members{
     }
 }
 @media screen and (min-width: 992px){
-    .content{
+    .container{
         width: 88vw;
     }
 }
 @media screen and (min-width: 1200px){
-    .content{
+    .container{
         width: 85vw;
     }
 }
+
+
+/* :::: animation && transition styles stopper :::: */
+.resize-animation-stopper *{
+    animation: none !important;
+    transition: none !important;
+}
+
