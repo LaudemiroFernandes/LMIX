@@ -27,16 +27,20 @@
             </div>
 
             <div class="nav-collapse">
-                <ul class="nav-collpase-items">
-                    <li class="nav-item"><a class="nav-link href="#home">home</a></li>
-                    <li class="nav-item"><a class="nav-link href="#mixes">mixs</a></li>
-                    <li class="nav-item"><a class="nav-link href="#lives">lives</a></li>
-                    <li class="nav-item"><a class="nav-link href="#members">members</a></li>
+                <ul class="nav-collapse-items">
+                    <li class="nav-item"><a class="nav-link" href="#home">home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mixes">mixs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lives">lives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#members">members</a></li>
                 </ul>
             </div>
         </div>
     </header>
     <!--  fim header -->
+
+
+
+
 
     <!-- inicio home page -->
     <section class="home container" id="home">
@@ -140,18 +144,81 @@
     <!-- js code -->
     <!-- fim home page -->
 
-    <!-- inicio home page -->
+
+
+
+    <!-- inicio mixes page -->
     <section class="mixes container" id="mixes">
         <div class="row">
-            <div class="row-left"></div>
+            <div class="mixe-row">
+                <div class="m-header">
+                    <h1>MEU TOPE HIGTH MIXS SOUND</h1>
+                    <P>Ouvi meus megas mixes de seu join apoie-me e siga me também no meu canal do youtube e nas minhas redes socias. LMIX obrigado!</P>
+                    <nav>
+                        <ul class="mr-left">
+                            <li><a href="#">Add Recente</a></li>
+                            <li><a href="#">Top House</a></li>
+                            <li><a href="#">Melhores do ano</a></li>
+                            <li><a href="#">Super recomendado</a></li>
+                        </ul>
+                        <ul class="mr-right">
+                            <li>
+                                <a href="#" class="auto-play">
+                                    <label>
+                                        <h5>AUTO</h5>
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </label>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+        
+                <div class="box-container">
+                    <div class="title">
+                        <span></span>
+                        <span>Titulo</span>
+                        <span>Artista</span>
+                        <span>Genero</span>
+                        <span>Duração</span>
+                        <span></span>
+                    </div>
+                    <div class="m-list">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- fim home page -->
+    
+    <!-- javascript code mixes -->
+    <script>
+        / * code js for section mixes * /
+        $(document).ready(function(){
+        
+            var lista = $('.m-list');
+            var list_block;
+        
+            for(var key in song_list){
+                list_block = $('<div class="list_block"></div>');
+                lista.append(list_block);
+                list_block.append('<span class="play-button"><i class="fa fa-play-circle play-icon"></i><i class="fa fa-pause-circle play-icon"></i></span>');
+                list_block.append('<span class="song-title">'+ song_list[key].title +'</span>');
+                list_block.append('<span class="song-artist">'+ song_list[key].artist +'</span>');
+                list_block.append('<span class="song-genere">'+ song_list[key].genere +'</span>');
+                list_block.append('<span class="song-duration">'+ song_list[key].duration +'</span>');
+                list_block.append('<span class="wave-animation"><ul><li></li><li></li><li></li><li></li><li></li></ul></span>');
+                list_block.append('<span class="track"><audio id="audio" controls><source src="songs/'+ song_list[key].track +'" type="audio/mp3"></audio></span>');
+            }
+        });
+    </script>
+    <!-- fim javacript -->
+    <!-- fim mixes page -->
 
     <!-- inicio home page -->
     <section class="lives container" id="lives">
         <div class="row">
-            <div class="row-left"></div>
         </div>
     </section>
     <!-- fim home page -->

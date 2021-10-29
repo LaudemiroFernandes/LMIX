@@ -5,7 +5,8 @@
     justify-content: space-between;
 }
 .nav-brand img{
-    width: 100px;
+    width: 80px;
+    height: 50px;
 }
 .nav-toggler{
     border: none;
@@ -17,7 +18,7 @@
     color: var(--color-secondary);
 }
 .nav-toggler:hover{
-    opacity: 8;
+    opacity: .8;
 }
 .nav-collapse{
     height: 0;
@@ -201,7 +202,75 @@ img{
         font-size: 13px;
     }
 }
-/* ---------------------   ----------------- */
+/* ---------------------  MIXES ----------------- */
+.mixes{
+    color: var(--color-secondary);
+    font-weight: normal;
+    letter-spacing: .6;
+}
+.mixes .row{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1140px;
+}
+.mixes .header{
+    text-align: center;
+}
+.mixes .header h1{
+    font-style: 50px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.mixes .header p{
+    line-height: 26;
+    font-weight: 300;
+    padding: 0 130px;
+}
+.mixes nav{
+    width: 100%;
+    display: inline-block;
+    border-top: 1px solid;
+}
+.mixes nav ul{padding-left: 0;}
+.mixes nav ul.mr-left{float: left;}
+.mixes nav ul.mr-right{float: right;}
+.mixes nav ul li{display: inline-block; margin-right: 25px;}
+.mixes nav ul li:last-child{margin-right: 0;}
+.mixes .auto-play label{display: flex; align-items: center;}
+.mixes .auto-play h5{margin: 0; font-weight: 500;}
+.mixes .auto-play span{
+    width: 60px;
+    height: 25px;
+    margin-left: 5px;
+    position: relative;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all ease 0.5s;
+    border: 2px solid var(--color-thema);
+}
+.mixes .auto-play span::before{
+    top: 1px;
+    left: 2px;
+    content: '';
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    border-radius: 50px;
+    transition: all ease 0.5s;
+    background: var(--color-thema);
+}
+.mixes .auto-play input:checked ~ span{
+    border-color: #CC0000;
+    background: rgb(204 0 0 / .2);
+    box-shadow: 0 5px 25px rgb(204 0 0 / .5), 0 0 25px rgb(204 0 0 / .5);
+}
+.mixes .auto-play input:checked ~ span::before{
+    left: 34px;
+    background: #CC0000;
+    box-shadow: 0 5px 25px rgb(204 0 0 / .5), 0 0 25px rgb(204 0 0 / .5);
+}
+.auto-play input{display: none;}
+/* ---------------------  LIVES ----------------- */
 
 
 /* -[Media Queries]- */
@@ -216,7 +285,11 @@ img{
         align-items: center;
         justify-content: space-between;
     }
-    .nav-collpase-items{
+    .nav-collapse{
+        height: 100%;
+        font: 1px 0 auto;
+    }
+    .nav-collapse-items{
         display: flex;
         justify-content: flex-end;
     }
