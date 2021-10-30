@@ -205,6 +205,7 @@ img{
 /* ---------------------  MIXES ----------------- */
 .mixes{
     color: var(--color-secondary);
+    background-color: #B2000060;
     font-weight: normal;
     letter-spacing: .6;
 }
@@ -213,18 +214,18 @@ img{
     margin: 0 auto;
     max-width: 1140px;
 }
-.mixes .header{
+.mixes .m-header{
     text-align: center;
 }
-.mixes .header h1{
+.mixes .m-header h1{
     font-style: 50px;
     font-weight: 400;
     margin-bottom: 0;
 }
-.mixes .header p{
-    line-height: 26;
+.mixes .m-header p{
     font-weight: 300;
     padding: 0 130px;
+    line-height: 26px;
 }
 .mixes nav{
     width: 100%;
@@ -270,6 +271,68 @@ img{
     box-shadow: 0 5px 25px rgb(204 0 0 / .5), 0 0 25px rgb(204 0 0 / .5);
 }
 .auto-play input{display: none;}
+.mixes .box-container{margin-top: 30px;}
+.mixes .box-container .title{
+    color: #FFF;
+    display: flex;
+    padding: 20px 5px;
+    border-radius: 10px;
+    background: var(--color-thema);
+}
+.mixes .box-container .title span{font-size: 20px;}
+.mixes .box-container .title span:nth-child(1){width: 8%;}
+.mixes .box-container .title span:nth-child(2){width: 35%;}
+.mixes .box-container .title span:nth-child(3){width: 16%;}
+.mixes .box-container .title span:nth-child(4){width: 16%;}
+.mixes .box-container .title span:nth-child(5){width: 10%;}
+.mixes .box-container .title span:nth-child(6){width: 10%;}
+.mixes .box-container .list_block{
+    display: flex;
+    margin-top: 25px;
+    padding: 20px 5px;
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: var(--color-primary);
+}
+.mixes .box-container .list_block span{font-size: 16px; font-weight: 400;}
+.mixes .box-container .list_block .btn-baixar{position: absolute; right: 30px;}
+.mixes .box-container .list_block .btn-baixar:hover{opacity: .7;}
+
+
+/* ANIMATION */
+.wave-animation ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.wave-animation ul li{
+    width: 3px;
+    opacity: .1;
+    height: 40px;
+    margin: 0 5px;
+    display: inline-block;
+    background-color: #FFF;
+    transform-origin: bottom;
+    animation-play-state: paused;
+    animation: beat 1s linear 0s infinite;
+}
+@keyframes beat{
+    50%{
+        transform: scaleY(0);
+    }
+}
+.wave-animation li:nth-child(1){
+    animation-delay: .2s;
+}
+.wave-animation li:nth-child(2){
+    animation-delay: .4s;
+}
+.wave-animation li:nth-child(4){
+    animation-delay: .3s;
+}
+
 /* ---------------------  LIVES ----------------- */
 
 

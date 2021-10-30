@@ -203,14 +203,64 @@
             for(var key in song_list){
                 list_block = $('<div class="list_block"></div>');
                 lista.append(list_block);
-                list_block.append('<span class="play-button"><i class="fa fa-play-circle play-icon"></i><i class="fa fa-pause-circle play-icon"></i></span>');
+                list_block.append('<span class="play-button"><i class="fa fa-play-circle play-icon"></i><i class="fa fa-pause-circle pause-icon"></i></span>');
                 list_block.append('<span class="song-title">'+ song_list[key].title +'</span>');
                 list_block.append('<span class="song-artist">'+ song_list[key].artist +'</span>');
                 list_block.append('<span class="song-genere">'+ song_list[key].genere +'</span>');
                 list_block.append('<span class="song-duration">'+ song_list[key].duration +'</span>');
                 list_block.append('<span class="wave-animation"><ul><li></li><li></li><li></li><li></li><li></li></ul></span>');
                 list_block.append('<span class="track"><audio id="audio" controls><source src="songs/'+ song_list[key].track +'" type="audio/mp3"></audio></span>');
+                list_block.append('<span class="btn-baixar"><a  target="_blank href="'+ song_list[key].track +'"><i class="fa fa-download"></i></a></span>');
             }
+
+
+
+            /* play function */
+            $(".list_block .play-button .play-icon").on('click', function(current){
+
+                $(this).parent().find(".play-icon").css({'display':'none'});
+                $(this).parent().find(".pause-icon").css({'display':'inline-block'});
+                $(".play-icon").not(this).parent().find(".pause-icon").css({'display':'none'});
+                $(".play-icon").not(this).parent().find(".play-icon").css({'display':'inline-block'}); 
+
+                /* ADD && REMOVE CLASS */
+                $(this).parent().parent().addClass("isPlaying");
+                $(".play-icon").not(this).parent().removeClass("isPlaying");
+
+                /* beat animation play */
+                $(this).parent().parent().find(".wave-animation li").css({'animation-play-state': 'running','opacity':'1'});
+                $(".play-icon").not(this).parent().parent().find(".wave-animation li").css({'animation-play-state': 'running','opacity':'.1'});
+
+                /* pause current audio when play next or prev (parar a musica atual quando reproduzir a seguinte ou anterior)*/
+                $("audio").each(function(e){
+                    if(e !== current.currentTarget){
+                        $(this)[0].pause();
+                    }
+                });
+
+                /* play current audio (reproduzindo actualment)*/
+                $(this).parent().parent().find(".track audio")[0].play();
+            });
+
+
+
+            /* pause funtionaly */
+            $(".list_block .play-button .pause-icon").on('click', function(){
+
+
+                /* hide pause-icon */
+                $(this).parent().find(".pause-icon").css({'display':'none'});
+
+                /*show play-icon*/
+                $(this).parent().find("play-icon").css({'display':'inline-block'});
+
+
+                /* wave-animation pause */
+                $(this).parent().parent().find(".wave-animation li").css({'animation-play-state':'paused'});
+
+                /* pause current audio */
+                $(this).parent().parent().find(".track audio")[0].pause();
+            });
         });
     </script>
     <!-- fim javacript -->
