@@ -46,7 +46,7 @@
     width: 0;
 }
 .nav-link:hover::after{
-    width: 100px;
+    width: 60px;
 }
 .nav-link{
     font-size: 1rem;
