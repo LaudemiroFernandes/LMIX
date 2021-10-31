@@ -27,36 +27,36 @@ var song_list = {
     },
     "02": {
         title: "Rockstar",
-        artista: "Post Malone",
-        genero: "Hipop",
+        artist: "Post Malone",
+        genere: "Hipop",
         duration: "3:38",
         track: "Post Malone - Rockstar.mp3"
     },
     "03": {
-        title: "ShSunflowerit",
-        artista: "Post Malone",
-        genero: "Hipop",
+        title: "Sunflower",
+        artist: "Post Malone",
+        genere: "Hipop",
         duration: "2:38",
         track: "Post Malone - Sunflower.mp3"
     },
     "04": {
         title: "human",
-        artista: "Rag'n'Bone Man",
-        genero: "Pop",
+        artist: "Rag'n'Bone Man",
+        genere: "Pop",
         duration: "3:37",
         track: "Rag'n'Bone Man - Human.mp3"
     },
     "05": {
         title: "Skin",
-        artista: "Rag'n'Bone Man",
-        genero: "Pop",
+        artist: "Rag'n'Bone Man",
+        genere: "Pop",
         duration: "4:27",
-        track: "Rag'n'Bone Man - Skint.mp3"
+        track: "Rag'n'Bone Man - Skin.mp3"
     },
     "06": {
         title: "Moonlight",
-        artista: "XXXTentaction",
-        genero: "Hipop",
+        artist: "XXXTentaction",
+        genere: "Hipop",
         duration: "2:17",
         track: "XXXTentaction - Moonlight.mp3"
     }

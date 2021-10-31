@@ -280,12 +280,12 @@ img{
     background: var(--color-thema);
 }
 .mixes .box-container .title span{font-size: 20px;}
-.mixes .box-container .title span:nth-child(1){width: 8%;}
-.mixes .box-container .title span:nth-child(2){width: 35%;}
-.mixes .box-container .title span:nth-child(3){width: 16%;}
-.mixes .box-container .title span:nth-child(4){width: 16%;}
-.mixes .box-container .title span:nth-child(5){width: 10%;}
-.mixes .box-container .title span:nth-child(6){width: 10%;}
+.mixes .box-container .title span:nth-child(1),.mixes .box-container .list_block span:nth-child(1){width: 8%;}
+.mixes .box-container .title span:nth-child(2),.mixes .box-container .list_block span:nth-child(2){width: 35%;}
+.mixes .box-container .title span:nth-child(3),.mixes .box-container .list_block span:nth-child(3){width: 16%;}
+.mixes .box-container .title span:nth-child(4),.mixes .box-container .list_block span:nth-child(4){width: 16%;}
+.mixes .box-container .title span:nth-child(5),.mixes .box-container .list_block span:nth-child(5){width: 10%;}
+.mixes .box-container .title span:nth-child(6),.mixes .box-container .list_block span:nth-child(6){width: 10%;}
 .mixes .box-container .list_block{
     display: flex;
     margin-top: 25px;
@@ -323,7 +323,7 @@ img{
         transform: scaleY(0);
     }
 }
-.wave-animation li:nth-child(1){
+.wave-animation li:nth-child(1),{
     animation-delay: .2s;
 }
 .wave-animation li:nth-child(2){
@@ -331,6 +331,25 @@ img{
 }
 .wave-animation li:nth-child(4){
     animation-delay: .3s;
+}
+.mixes .box-container .list_block.isPlaying{
+    border: 1px solid #CC0000;
+    box-shadow: 0 5px 25px rgb(204 0 0 / .5), 0 0 25px rgb(204 0 0 / .5);
+}
+
+
+.box-container span.play-button{text-align: center;}
+.box-container span.play-button i{
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all ease .5s;
+}
+.box-container .list_block.isPlaying span.play-button i{
+    box-shadow: 0 5px 25px rgb(204 0 0 / .5), 0 0 25px rgb(204 0 0 / .5);
+}
+/* hide audio */
+.box-container .list_block .track{
+    display: none;
 }
 
 /* ---------------------  LIVES ----------------- */

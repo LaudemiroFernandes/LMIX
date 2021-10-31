@@ -183,6 +183,7 @@
                         <span>Genero</span>
                         <span>Duração</span>
                         <span></span>
+                        <span></span>
                     </div>
                     <div class="m-list">
 
@@ -261,6 +262,30 @@
                 /* pause current audio */
                 $(this).parent().parent().find(".track audio")[0].pause();
             });
+
+            /* autoplay function */
+            $(".auto-play input").on('change', function(){
+                if($(this).is(":checked")){
+                    $("audio").on('ended', function(){
+
+                        $(this).parent().parent().next().addClass("isPlaing");
+
+                        $(".list_block").removeClass("isPlaying");
+                        $(this).parent().parent().next().addClass("isPlaying");
+                        $(this).parent().parent().next().find(".wave-animation li").css({'animation-play-state': 'running','opacity':'1'});
+
+                        $(this).parent().parent().next().find(".play-icon").css({'display':'none'});
+                        $(this).parent().parent().next().find(".pause-icon").css({'display':'inline-block'});
+                    })
+                }
+                else{
+                    $("audio").on('ended', function(){
+                        $(".wave-animation li").css({'animation-play-state': 'paused','opacity':'.1'});
+                        $(".pause-icon").css({'display':'none'});
+                        $(".play-icon").css({'display':'inline-block'});
+                    });
+                }
+            }).change();
         });
     </script>
     <!-- fim javacript -->
